@@ -13,6 +13,7 @@ namespace WebApplication
     {
         public static void Main(string[] args)
         {
+            //comment
             CreateHostBuilder(args).Build().Run();
         }
 
