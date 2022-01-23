@@ -1,6 +1,8 @@
 name: Building a WebApplication
 
 on:
+  push:
+    branches: [ master, develop ]
   pull_request:
     branches: [ master ]
 
@@ -20,4 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+      if: github.ref == 'refs/heads/develop'
       run: dotnet test --no-build --verbosity normal
